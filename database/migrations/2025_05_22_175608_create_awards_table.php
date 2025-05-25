@@ -14,8 +14,8 @@ return new class extends Migration
         Schema::create('awards', function (Blueprint $table) {
             $table->id();
             $table->integer('year');
-            $table->string('Award');
-            $table->string('name');
+            $table->string('award');
+            $table->string('player_name');
             $table->timestamps();
         });
     }
