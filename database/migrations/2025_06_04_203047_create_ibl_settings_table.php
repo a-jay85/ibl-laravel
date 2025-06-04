@@ -11,12 +11,10 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('banners', function (Blueprint $table) {
-            $table->id();
-            $table->integer('year');
-            $table->string('name');
-            $table->string('team_name');
-            $table->timestamps();
+        Schema::create('ibl_settings', function (Blueprint $table) {
+            $table->increments('id');
+            $table->string('name', 128);
+            $table->string('value', 128);
         });
     }
 
@@ -25,6 +23,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('banners');
+        Schema::dropIfExists('ibl_settings');
     }
 };

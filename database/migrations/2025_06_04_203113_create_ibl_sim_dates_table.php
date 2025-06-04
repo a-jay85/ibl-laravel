@@ -11,12 +11,10 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('awards', function (Blueprint $table) {
-            $table->id();
-            $table->integer('year');
-            $table->string('award');
-            $table->string('player_name');
-            $table->timestamps();
+        Schema::create('ibl_sim_dates', function (Blueprint $table) {
+            $table->increments('Sim');
+            $table->string('Start Date', 11)->nullable();
+            $table->string('End Date', 11)->nullable();
         });
     }
 
@@ -25,6 +23,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('awards');
+        Schema::dropIfExists('ibl_sim_dates');
     }
 };
