@@ -34,4 +34,9 @@ class IblTeamInfo extends Model
         'HasLLE',
         'chart'
     ];
+
+    public function players()
+    {
+        return $this->hasMany(IblPlr::class, 'tid', 'teamid');
+    }
 }

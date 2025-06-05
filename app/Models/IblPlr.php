@@ -26,4 +26,9 @@ class IblPlr extends Model
         'r_stl', 'r_to', 'r_blk', 'r_foul', 'draftround', 'draftedby', 'draftedbycurrentname', 'draftyear', 'draftpickno',
         'injured', 'htft', 'htin', 'wt', 'retired', 'college', 'car_playoff_min', 'car_preseason_min', 'droptime', 'temp'
     ];
+
+    public function team()
+    {
+        return $this->belongsTo(IblTeamInfo::class, 'tid', 'teamid');
+    }
 }
